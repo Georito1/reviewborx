@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Reviewborx</title>
+  <!-- Add your CSS and other libraries here -->
+</head>
+<body>
+  <!-- Add your navigation and page content here -->
+
+  <!-- Subscription form -->
+  <div id="subscription-form"></div>
+
+  <!-- Add your footer here -->
+
+  <!-- Form script -->
+  <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    hbspt.forms.create({
+      region: "eu1",
+      portalId: "139832635",
+      formId: "909f94a1-b8c9-478f-8d5c-b790593fd07d",
+      target: '#subscription-form',
+      onFormSubmit: function($form) {
+        // Redirect after successful form submission
+        const redirectUrl = getParameterByName('redirect');
+        if (redirectUrl) {
+          window.location.href = redirectUrl;
+        }
+      }
+    });
+
+    // Helper function to get query parameters from URL
+    function getParameterByName(name, url = window.location.href) {
+      name = name.replace(/[\[\]]/g, '\\$&');
+      const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+      const results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+  </script>
+</body>
+</html>
